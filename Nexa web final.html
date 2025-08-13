@@ -1,0 +1,1331 @@
+<html lang="zh-Hant"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexa - 連接港校科創，直通高交會舞臺</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#165DFF',
+                        secondary: '#36CFC9',
+                        accent: '#722ED1',
+                        dark: '#1D2129',
+                        light: '#F2F3F5'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .transition-custom {
+                transition: all 0.3s ease;
+            }
+            .card-hover {
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            }
+            .scrollbar-hide::-webkit-scrollbar {
+                display: none;
+            }
+            .scrollbar-hide {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans text-dark bg-white">
+    <!-- 導航欄 -->
+    <header id="navbar" class="fixed w-full bg-white/95 shadow-sm z-50 transition-all duration-300">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 md:h-20">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="#" class="flex items-center">
+                        <img src="https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/code_assistant/5acd59ec25844c89a5fd1da6427beab9~tplv-a9rns2rl98-image.image?rcl=202508071506083AB723330EB487C7133C&amp;rk3s=8e244e95&amp;rrcfp=e75484ac&amp;x-expires=1755155168&amp;x-signature=zSfOQtd4O1%2FqN14m%2FZTuJGluJ50%3D" alt="Nexa组织的商标" class="w-14 h-14 rounded-lg object-contain">
+                        <span class="ml-3 text-xl font-bold text-dark">Nexa</span>
+                    </a>
+                </div>
+                
+                <!-- 桌面端導航 -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-dark hover:text-primary font-medium transition-custom">首頁</a>
+                    <a href="#about" class="text-dark hover:text-primary font-medium transition-custom">關於我們</a>
+                    <a href="#services" class="text-dark hover:text-primary font-medium transition-custom">業務板塊</a>
+                    <a href="#cases" class="text-dark hover:text-primary font-medium transition-custom">成功案例</a>
+                    <a href="#activities" class="text-dark hover:text-primary font-medium transition-custom">活動資訊</a>
+                    <a href="#contact" class="text-dark hover:text-primary font-medium transition-custom">聯繫我們</a>
+                </nav>
+                
+                <!-- 行動呼吁按鈕 -->
+                <div class="hidden md:block">
+                    <a href="#apply" class="bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg font-medium transition-custom">
+                        申請參與
+                    </a>
+                </div>
+                
+                <!-- 手機端菜單按鈕 -->
+                <button id="menuBtn" class="md:hidden text-dark hover:text-primary focus:outline-none">
+                    <i class="fa fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- 手機端菜單 -->
+        <div id="mobileMenu" class="md:hidden hidden bg-white border-t">
+            <div class="container mx-auto px-4 py-3 space-y-3">
+                <a href="#home" class="block py-2 text-dark hover:text-primary font-medium">首頁</a>
+                <a href="#about" class="block py-2 text-dark hover:text-primary font-medium">關於我們</a>
+                <a href="#services" class="block py-2 text-dark hover:text-primary font-medium">業務板塊</a>
+                <a href="#cases" class="block py-2 text-dark hover:text-primary font-medium">成功案例</a>
+                <a href="#activities" class="block py-2 text-dark hover:text-primary font-medium">活動資訊</a>
+                <a href="#contact" class="block py-2 text-dark hover:text-primary font-medium">聯繫我們</a>
+                <a href="#apply" class="block py-2 bg-primary text-white text-center rounded-lg font-medium">申請參與</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 首頁橫幅 -->
+    <section id="home" class="pt-24 md:pt-32 pb-16 md:pb-24 bg-gradient-to-br from-light to-white">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-10 lg:mb-0">
+                    <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold leading-tight text-dark mb-6">
+                        連接港校科創<br>
+                        <span class="text-primary">直通高交會舞臺</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-600 mb-8 max-w-lg">Nexa為香港高校科創項目提供全方位孵化與資源對接服務，助力優秀項目登陸高交會，開啟國際化發展之路。</p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#services" class="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-lg font-medium text-center transition-custom">
+                            了解服務
+                        </a>
+                        <a href="#activities" class="border-2 border-primary text-primary hover:bg-primary/5 px-8 py-3 rounded-lg font-medium text-center transition-custom">
+                            近期活動
+                        </a>
+                    </div>
+                    
+                    <!-- 核心數據 -->
+                    <div class="grid grid-cols-3 gap-4 mt-12">
+                        <div class="text-center">
+                            <p class="text-3xl font-bold text-primary">15+</p>
+                            <p class="text-gray-600 text-sm">港校合作</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-3xl font-bold text-primary">120+</p>
+                            <p class="text-gray-600 text-sm">孵化項目</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-3xl font-bold text-primary">70%</p>
+                            <p class="text-gray-600 text-sm">融資成功率</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2 relative">
+                    <div class="relative rounded-2xl overflow-hidden shadow-xl transform hover:scale-[1.02] transition-custom">
+                        <img src="https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/code_assistant/cd635da72c2143129dce554f6e52e400~tplv-a9rns2rl98-image.image?rcl=2025080716354562DE175744DB75CED00F&amp;rk3s=8e244e95&amp;rrcfp=e75484ac&amp;x-expires=1755160546&amp;x-signature=wx4jYuYcdVjFNGFF49ElO1GNCkE%3D" alt="高交會現場照片，展示各種科技展品和交流場景" class="w-full h-auto">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <div class="absolute bottom-0 right-0 p-6 md:p-8">
+                            <span class="bg-white/90 text-primary px-3 py-1 rounded-full text-sm font-medium">第27屆高交會</span>
+                            <p class="text-white text-xl font-bold mt-2">Nexa專屬展區現場</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 懸浮元素 -->
+                    <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-lg shadow-lg hidden md:block">
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center text-green-600">
+                                <i class="fa fa-line-chart text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold">項目增長</p>
+                                <p class="text-green-600 font-bold">+180%</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="absolute -top-4 -right-4 bg-white p-4 rounded-lg shadow-lg hidden md:block">
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
+                                <i class="fa fa-handshake-o text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold">合作企業</p>
+                                <p class="text-blue-600 font-bold">300+</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 合作夥伴 -->
+    <section class="py-12 bg-light">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <p class="text-center text-gray-500 mb-8">值得信賴的合作夥伴</p>
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-70">
+                <div class="h-8 md:h-10 flex items-center">
+                    <span class="text-gray-400 font-bold text-lg">博士智庫研究院</span>
+                </div>
+                <div class="h-8 md:h-10 flex items-center">
+                    <span class="text-gray-400 font-bold text-lg">種心基金會</span>
+                </div>
+                <div class="h-8 md:h-10 flex items-center">
+                    <span class="text-gray-400 font-bold text-lg">環球商業協會</span>
+                </div>
+                <div class="h-8 md:h-10 flex items-center">
+                    <span class="text-gray-400 font-bold text-lg">香港高校聯盟</span>
+                </div>
+                <div class="h-8 md:h-10 flex items-center">
+                    <span class="text-gray-400 font-bold text-lg">高交會組委會</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 關於我們 -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-primary font-medium">關於Nexa</span>
+                <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold mt-2 mb-4">連接港校科創與全球資源的橋樑</h2>
+                <p class="text-gray-600">Nexa成立於2018年，專注於香港高校科技創新項目的孵化與推廣，致力於為優秀科創項目搭建與產業資本對接的橋樑。</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="relative">
+                        <img src="https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/code_assistant/c9fd3d1f9d054cdf8d7c3d53b01f8faa~tplv-a9rns2rl98-image.image?rcl=202508071649112C799A3031AB6CC49F6C&amp;rk3s=8e244e95&amp;rrcfp=e75484ac&amp;x-expires=1755161352&amp;x-signature=1xN4BysM9n879PB6rDr63k3WvjU%3D" alt="Nexa團隊工作場景，展示團隊成員討論項目的畫面" class="w-full h-auto rounded-xl shadow-lg">
+                        <div class="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-lg max-w-xs">
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                                    <i class="fa fa-quote-left"></i>
+                                </div>
+                                <p class="font-bold">我們的使命</p>
+                            </div>
+                            <p class="text-gray-600 text-sm">挖掘港校科創潛力，推動項目在高交會實現價值最大化</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4">關於Nexa</h3>
+                    <p class="text-gray-600 mb-6">Nexa是香港領先的高校科創項目孵化與資源對接平台，與香港8所大學建立緊密合作關係，每年幫助數十個優秀學生項目登陸高交會等國際性展會，獲得投資與產業合作機會。</p>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                                <i class="fa fa-lightbulb-o text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">項目孵化</h4>
+                                <p class="text-gray-600">提供技術評估、商業模型構建、團隊指導等全方位孵化服務</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                                <i class="fa fa-globe text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">高交會對接</h4>
+                                <p class="text-gray-600">提供高交會參展一站式服務，包括展位申請、資料準備、現場對接</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                                <i class="fa fa-handshake-o text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">資源整合</h4>
+                                <p class="text-gray-600">連接企業、投資機構與高校，構建完整的科創生態系統</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#contact" class="inline-flex items-center text-primary font-medium hover:underline">
+                        了解更多關於我們的故事 <i class="fa fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- 核心资源 -->
+            <div class="mt-20">
+                <h3 class="text-2xl font-bold text-center mb-10">核心資源</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- 博士智庫研究院 - 可点击卡片 -->
+                    <div class="bg-white rounded-xl shadow-sm card-hover cursor-pointer p-6 text-center" onclick="openModal('thinktankModal')">
+                        <div class="w-24 h-24 rounded-lg mx-auto mb-4 bg-light p-2 overflow-hidden">
+                            <img src="https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/code_assistant/ba22cda545e942d6a1f29747c35b05fd~tplv-a9rns2rl98-image.image?rcl=202508071542316B7F2D2C693D677C52CD&amp;rk3s=8e244e95&amp;rrcfp=e75484ac&amp;x-expires=1755157352&amp;x-signature=wiGw85JYSZJhtKumHEgagM8zCEA%3D" alt="博士智庫研究院標誌" class="w-full h-full object-contain">
+                        </div>
+                        <h4 class="font-bold text-lg">博士智庫研究院</h4>
+                        <p class="text-primary text-sm mb-2">學術資源平台</p>
+                        <p class="text-gray-600 text-sm">匯聚全球頂尖學者，提供技術指導與學術支持，協助項目提升技術門檻與創新性</p>
+                        <div class="mt-4 text-primary font-medium">
+                            了解更多 <i class="fa fa-angle-right ml-1"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- 種心基金會 - 可点击卡片 -->
+                    <div class="bg-white rounded-xl shadow-sm card-hover cursor-pointer p-6 text-center" onclick="openModal('foundationModal')">
+                        <div class="w-24 h-24 rounded-lg mx-auto mb-4 bg-light p-2 overflow-hidden">
+                            <img src="https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/code_assistant/bd364909039f4bf59ccdef7a59da8fe8~tplv-a9rns2rl98-image.image?rcl=20250807154245B3FA10BCF03131571B9C&amp;rk3s=8e244e95&amp;rrcfp=e75484ac&amp;x-expires=1755157366&amp;x-signature=uNBWNhSj%2F6YL9e95DchbaOq4gU4%3D" alt="種心基金會標誌" class="w-full h-full object-contain">
+                        </div>
+                        <h4 class="font-bold text-lg">種心基金會</h4>
+                        <p class="text-primary text-sm mb-2">資金支持機構</p>
+                        <p class="text-gray-600 text-sm">專注科創項目早期投資，提供種子輪與天使輪融資，配套完善的投後服務體系</p>
+                        <div class="mt-4 text-primary font-medium">
+                            了解更多 <i class="fa fa-angle-right ml-1"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- 環球商業協會 - 可点击卡片 -->
+                    <div class="bg-white rounded-xl shadow-sm card-hover cursor-pointer p-6 text-center" onclick="openModal('businessModal')">
+                        <div class="w-24 h-24 rounded-lg mx-auto mb-4 bg-light p-2 overflow-hidden">
+                            <img src="https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/code_assistant/17680ed8d1cb41feb693fa30fdba4ae4~tplv-a9rns2rl98-image.image?rcl=20250807154300F1A9C4F165F34505B592&amp;rk3s=8e244e95&amp;rrcfp=e75484ac&amp;x-expires=1755157381&amp;x-signature=ulY3uIDS1RJ5kxpk%2B9SL9wcu7eY%3D" alt="環球商業協會標誌" class="w-full h-full object-contain">
+                        </div>
+                        <h4 class="font-bold text-lg">環球商業協會</h4>
+                        <p class="text-primary text-sm mb-2">產業對接平台</p>
+                        <p class="text-gray-600 text-sm">連接500+跨國企業與產業集團，提供市場渠道與商業合作機會，加速項目落地</p>
+                        <div class="mt-4 text-primary font-medium">
+                            了解更多 <i class="fa fa-angle-right ml-1"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 業務板塊 -->
+    <section id="services" class="py-20 bg-light">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-primary font-medium">我們的服務</span>
+                <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold mt-2 mb-4">全方位科創項目孵化與推廣</h2>
+                <p class="text-gray-600">從校內項目挖掘到高交會參展，Nexa提供一站式服務，助力港校科創項目實現商業價值。</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- 服務1：高交會直通車 -->
+                <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition-custom overflow-hidden">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://p3-search.byteimg.com/obj/labis/1ff7f0adaa39e654a637b326965f52e4" alt="高交會直通車服務，展示高交會展館和展位" class="w-full h-full object-cover transform hover:scale-105 transition-custom duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4">
+                            <i class="fa fa-train text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">高交會直通車服務</h3>
+                        <p class="text-gray-600 mb-4">提供從項目篩選到參展的全流程服務，確保港校項目在高交會上閃耀登場。</p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-start gap-2">
+                                <i class="fa fa-check text-green-500 mt-1"></i>
+                                <span class="text-gray-600 text-sm">展位申請與優惠協談</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa fa-check text-green-500 mt-1"></i>
+                                <span class="text-gray-600 text-sm">參展資料製作指導</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa fa-check text-green-500 mt-1"></i>
+                                <span class="text-gray-600 text-sm">現場翻譯與商務對接服務</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa fa-check text-green-500 mt-1"></i>
+                                <span class="text-gray-600 text-sm">交通補貼與住宿安排</span>
+                            </li>
+                        </ul>
+                        <a href="#apply" class="inline-block w-full text-center bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg font-medium transition-custom">申請參與</a>
+                    </div>
+                </div>
+                
+                <!-- 服務2：科創項目孵化 -->
+                <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition-custom overflow-hidden">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://p3-search.byteimg.com/obj/labis/008bf630c8448a2d33a421bed29272c3" alt="科創項目孵化服務，展示團隊討論和原型開發" class="w-full h-full object-cover transform hover:scale-105 transition-custom duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4">
+                            <i class="fa fa-cogs text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">科創項目孵化</h3>
+                        <p class="text-gray-600 mb-4">由經驗豐富的導師團隊提供指導，幫助項目從實驗室走向市場。</p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-start gap-2">
+                                <i class="fa fa-check text-green-500 mt-1"></i>
+                                <span class="text-gray-600 text-sm">技術可行性行評估</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa fa-check text-green-500 mt-1"></i>
+                                <span class="text-gray-600 text-sm">商業模式構建與優化</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa fa-check text-green-500 mt-1"></i>
+                                <span class="text-gray-600 text-sm">1對1導師輔導計劃</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa fa-check text-green-500 mt-1"></i>
+                                <span class="text-gray-600 text-sm">原型開發與測試支持</span>
+                            </li>
+                        </ul>
+                        <a href="#apply" class="inline-block w-full text-center bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg font-medium transition-custom">
+                            申請孵化
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- 服務3：資源對接平台 -->
+                <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition-custom overflow-hidden">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://p3-search.byteimg.com/obj/labis/adcb1922bfdb6a86e9bae9e7c617581b" alt="資源對接平台，展示企業和投資者交流場景" class="w-full h-full object-cover transform hover:scale-105 transition-custom duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4">
+                            <i class="fa fa-exchange text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">資源對接平台</h3>
+                        <p class="text-gray-600 mb-4">連接項目團隊與企業、投資者，促進技術技術合作與資本對接。</p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-start gap-2">
+                                <i class="fa fa-check text-green-500 mt-1"></i>
+                                <span class="text-gray-600 text-sm">企業需求庫查詢</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa fa-check text-green-500 mt-1"></i>
+                                <span class="text-gray-600 text-sm">投資人見面會安排</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa fa-check text-green-500 mt-1"></i>
+                                <span class="text-gray-600 text-sm">技術合作洽談會</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa fa-check text-green-500 mt-1"></i>
+                                <span class="text-gray-600 text-sm">產業鏈資源整合</span>
+                            </li>
+                        </ul>
+                        <a href="#contact" class="inline-block w-full text-center bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg font-medium transition-custom">
+                            了解更多
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 服務流程 -->
+            <div class="mt-20">
+                <h3 class="text-2xl font-bold text-center mb-12">服務流程</h3>
+                <div class="relative">
+                    <!-- 流程線 -->
+                    <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-gray-200 transform -translate-x-1/2"></div>
+                    
+                    <div class="space-y-12 md:space-y-0 relative">
+                        <!-- 步驟1 -->
+                        <div class="flex flex-col md:flex-row items-center">
+                            <div class="md:w-1/2 md:pr-12 md:text-right mb-6 md:mb-0 md:order-1">
+                                <h4 class="text-xl font-bold mb-2">項目申請與評估</h4>
+                                <p class="text-gray-600">提交項目申請表，我們的專家團隊將對項目進行技術與商業價值評估。</p>
+                            </div>
+                            <div class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center z-10 mb-6 md:mb-0">
+                                <span class="font-bold">1</span>
+                            </div>
+                            <div class="md:w-1/2 md:pl-12 md:order-2"></div>
+                        </div>
+                        
+                        <!-- 步驟2 -->
+                        <div class="flex flex-col md:flex-row items-center">
+                            <div class="md:w-1/2 md:pr-12 md:text-right mb-6 md:mb-0 md:order-1 hidden md:block"></div>
+                            <div class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center z-10 mb-6 md:mb-0">
+                                <span class="font-bold">2</span>
+                            </div>
+                            <div class="md:w-1/2 md:pl-12 md:order-2">
+                                <h4 class="text-xl font-bold mb-2">定制孵化計劃</h4>
+                                <p class="text-gray-600">根據項目特點，制定個性化孵化計劃，包括技術優化、商業模式設計等。</p>
+                            </div>
+                        </div>
+                        
+                        <!-- 步驟3 -->
+                        <div class="flex flex-col md:flex-row items-center">
+                            <div class="md:w-1/2 md:pr-12 md:text-right mb-6 md:mb-0 md:order-1">
+                                <h4 class="text-xl font-bold mb-2">高交會參展準備</h4>
+                                <p class="text-gray-600">協助完成展位申請、參展資料製作、展示方案設計等準備工作。</p>
+                            </div>
+                            <div class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center z-10 mb-6 md:mb-0">
+                                <span class="font-bold">3</span>
+                            </div>
+                            <div class="md:w-1/2 md:pl-12 md:order-2"></div>
+                        </div>
+                        
+                        <!-- 步驟4 -->
+                        <div class="flex flex-col md:flex-row items-center">
+                            <div class="md:w-1/2 md:pr-12 md:text-right mb-6 md:mb-0 md:order-1 hidden md:block"></div>
+                            <div class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center z-10 mb-6 md:mb-0">
+                                <span class="font-bold">4</span>
+                            </div>
+                            <div class="md:w-1/2 md:pl-12 md:order-2">
+                                <h4 class="text-xl font-bold mb-2">現場參展與對接</h4>
+                                <p class="text-gray-600">提供現場翻譯、商務對接服務，協助與企業、投資者建立聯繫。</p>
+                            </div>
+                        </div>
+                        
+                        <!-- 步驟5 -->
+                        <div class="flex flex-col md:flex-row items-center">
+                            <div class="md:w-1/2 md:pr-12 md:text-right mb-6 md:mb-0 md:order-1">
+                                <h4 class="text-xl font-bold mb-2">後續跟進與服務</h4>
+                                <p class="text-gray-600">跟進合作意向，提供後續融資、技術落地等支持服務。</p>
+                            </div>
+                            <div class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center z-10 mb-6 md:mb-0">
+                                <span class="font-bold">5</span>
+                            </div>
+                            <div class="md:w-1/2 md:pl-12 md:order-2"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 成功案例 -->
+    <section id="cases" class="py-20 bg-white">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-primary font-medium">成功案例</span>
+                <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold mt-2 mb-4">從校園到高交會的成功故事</h2>
+                <p class="text-gray-600">這些優秀的港校科技項目通過Nexa的孵化與推廣，在高交會上大放異彩，獲得了市場認可與投資青睞。</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 案例1 -->
+                <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition-custom overflow-hidden">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://picsum.photos/600/400?random=6" alt="智能醫療影像識別系統展示" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="bg-blue-100 text-blue-600 px-2 py-1 rounded text-xs font-medium">人工智能</span>
+                            <span class="bg-green-100 text-green-600 px-2 py-1 rounded text-xs font-medium">醫療健康</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">智能醫療影像識別系統</h3>
+                        <p class="text-gray-500 text-sm mb-3">香港大學 | 第26屆高交會優秀產品獎</p>
+                        <p class="text-gray-600 mb-4">基於深度學習的醫療影像分析平台，能自動識別多種疾病特征，診斷準確率達92%。</p>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm text-gray-500">融資額</p>
+                                <p class="font-bold text-primary">HK$ 250萬</p>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500">合作企業</p>
+                                <p class="font-bold">3家</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 案例2 -->
+                <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition-custom overflow-hidden">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://picsum.photos/600/400?random=7" alt="新型納米過濾材料展示" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="bg-purple-100 text-purple-600 px-2 py-1 rounded text-xs font-medium">新材料</span>
+                            <span class="bg-teal-100 text-teal-600 px-2 py-1 rounded text-xs font-medium">環境科技</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">新型納米過濾材料</h3>
+                        <p class="text-gray-500 text-sm mb-3">香港中文大學 | 第26屆高交會創新獎</p>
+                        <p class="text-gray-600 mb-4">突破性的水處理納米材料，過濾效率提升300%，成本降低50%，應用前景廣闊。</p>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm text-gray-500">融資額</p>
+                                <p class="font-bold text-primary">HK$ 180萬</p>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500">合作企業</p>
+                                <p class="font-bold">5家</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 案例3 -->
+                <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition-custom overflow-hidden">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://picsum.photos/600/400?random=8" alt="智能物流機器人展示" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="bg-yellow-100 text-yellow-600 px-2 py-1 rounded text-xs font-medium">機器人</span>
+                            <span class="bg-indigo-100 text-indigo-600 px-2 py-1 rounded text-xs font-medium">物流</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">智能物流機器人系統</h3>
+                        <p class="text-gray-500 text-sm mb-3">香港科技大學 | 第25屆高交會金獎</p>
+                        <p class="text-gray-600 mb-4">自主導航的室內物流機器人集群系統，可大幅提升倉庫作業效率，降低人力成本。</p>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm text-gray-500">融資額</p>
+                                <p class="font-bold text-primary">HK$ 520萬</p>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500">合作企業</p>
+                                <p class="font-bold">8家</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <a href="#" class="inline-flex items-center bg-white border border-primary text-primary hover:bg-primary/5 px-6 py-3 rounded-lg font-medium transition-custom">
+                    查看更多案例 <i class="fa fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 活動資訊 -->
+    <section id="activities" class="py-20 bg-light">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-primary font-medium">活動資訊</span>
+                <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold mt-2 mb-4">近期活動與研討會</h2>
+                <p class="text-gray-600">參加我們的活動，與業內專家、投資者和同行交流，了解最新行業動態與機遇。</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- 重點活動 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="relative">
+                        <img src="https://picsum.photos/800/400?random=9" alt="高交會港校科創專場推介會" class="w-full h-64 object-cover">
+                        <div class="absolute top-4 left-4 bg-primary text-white px-4 py-2 rounded-lg font-bold">
+                            重點活動
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="flex items-center gap-1 text-gray-500">
+                                <i class="fa fa-calendar"></i>
+                                <span>2025年11月17日</span>
+                            </div>
+                            <div class="flex items-center gap-1 text-gray-500">
+                                <i class="fa fa-map-marker"></i>
+                                <span>深圳會展中心</span>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3">第27屆高交會Nexa專場</h3>
+                        <p class="text-gray-600 mb-4">Nexa組織香港8所高校的15個優秀科創項目參加高交會，設立專屬展區，並舉辦項目推介會與投資對接會。</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-sm">科技展覽</span>
+                            <span class="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-sm">投資對接</span>
+                            <span class="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-sm<span class=" bg-gray-100="" text-gray-600="" px-3="" py-1="" rounded-full="" text-sm"="">港校專場</span>
+                        </div>
+                        <a href="#apply" class="inline-block bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-lg font-medium transition-custom">
+                            報名參加
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- 即將舉辦的活動 -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6">即將舉辦的活動</h3>
+                    <div class="space-y-6">
+                        <!-- 活動1 -->
+                        <div class="bg-white rounded-xl shadow-sm p-5 hover:shadow-md transition-custom">
+                            <div class="flex gap-4">
+                                <div class="w-20 h-20 bg-primary/10 rounded-lg flex flex-col items-center justify-center shrink-0">
+                                    <span class="text-primary font-bold text-xl">08</span>
+                                    <span class="text-primary text-sm">SEP</span>
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="font-bold text-lg mb-1">Nexa高校嘉年華</h4>
+                                    <p class="text-gray-500 text-sm mb-2">香港中文大學 | 10:00-18:00</p>
+                                    <p class="text-gray-600 text-sm mb-3">匯聚香港各大高校的科創團隊，展示創新成果，提供交流互動與合作機會。</p>
+                                    <a href="#apply" class="text-primary text-sm font-medium hover:underline">報名參加</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 活動2 -->
+                        <div class="bg-white rounded-xl shadow-sm p-5 hover:shadow-md transition-custom">
+                            <div class="flex gap-4">
+                                <div class="w-20 h-20 bg-primary/10 rounded-lg flex flex-col items-center justify-center shrink-0">
+                                    <span class="text-primary font-bold text-xl">27</span>
+                                    <span class="text-primary text-sm">SEP</span>
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="font-bold text-lg mb-1">Nexa酒吧夜談</h4>
+                                    <p class="text-gray-500 text-sm mb-2">中環蘭桂坊 | 19:30-22:00</p>
+                                    <p class="text-gray-600 text-sm mb-3">輕鬆隨意的交流場合，與投資人、創業者面對面交流，分享經驗與機會。</p>
+                                    <a href="#apply" class="text-primary text-sm font-medium hover:underline">報名參加</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 活動3 -->
+                        <div class="bg-white rounded-xl shadow-sm p-5 hover:shadow-md transition-custom">
+                            <div class="flex gap-4">
+                                <div class="w-20 h-20 bg-primary/10 rounded-lg flex flex-col items-center justify-center shrink-0">
+                                    <span class="text-primary font-bold text-xl">10</span>
+                                    <span class="text-primary text-sm">OCT</span>
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="font-bold text-lg mb-1">項目交流交換會</h4>
+                                    <p class="text-gray-500 text-sm mb-2">香港科技大學 | 14:00-17:00</p>
+                                    <p class="text-gray-600 text-sm mb-3">促進不同高校項目之間的技術交流與資源共享，鼓勵跨校合作。</p>
+                                    <a href="#apply" class="text-primary text-sm font-medium hover:underline">報名參加</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 申請參與 -->
+    <section id="apply" class="py-20 bg-white">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="text-primary font-medium">申請參與</span>
+                    <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold mt-2 mb-4">加入Nexa，開啟科創之旅</h2>
+                    <p class="text-gray-600 mb-6">無論你是尋求孵化的港校科創項目，還是希望參加高交會的團隊，填寫申請表，我們的團隊將盡快與你聯繫。</p>
+                    
+                    <div class="space-y-6 mb-8">
+                        <div class="flex gap-4">
+                            <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-600 shrink-0">
+                                <i class="fa fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">免費初審</h4>
+                                <p class="text-gray-600 text-sm">所有申請項目均可獲得免費的初步評估與指導建議</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-4">
+                            <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-600 shrink-0">
+                                <i class="fa fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">個性化方案</h4>
+                                <p class="text-gray-600 text-sm">根據項目特點提供定制化的孵化與推廣方案</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-4">
+                            <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-600 shrink-0">
+                                <i class="fa fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">資源優先對接</h4>
+                                <p class="text-gray-600 text-sm">入選項目將獲得博士智庫、種心基金會等資源的優先對接權</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-primary/5 p-5 rounded-xl">
+                        <h4 class="font-bold mb-3 flex items-center gap-2">
+                            <i class="fa fa-info-circle text-primary"></i> 申請須知
+                        </h4>
+                        <ul class="space-y-2 text-gray-600 text-sm">
+                            <li class="flex items-start gap-2">
+                                <i class="fa fa-angle-right text-primary mt-1"></i>
+                                <span>申請項目需來自香港各大高校，具有一定的技術創新性</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa fa-angle-right text-primary mt-1"></i>
+                                <span>高交會參展申請截止日期為2025年10月30日</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa fa-angle-right text-primary mt-1"></i>
+                                <span>我們將在收到申請後5個工作日內給予回復</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="bg-white rounded-xl shadow-lg p-6 md:p-8">
+                        <h3 class="text-xl font-bold mb-6">項目申請表</h3>
+                        <form>
+                            <div class="grid md:grid-cols-2 gap-4 mb-4">
+                                <div>
+                                    <label for="name" class="block text-gray-700 text-sm font-medium mb-1">聯繫人姓名</label>
+                                    <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-custom" placeholder="請輸入姓名">
+                                </div>
+                                <div>
+                                    <label for="phone" class="block text-gray-700 text-sm font-medium mb-1">聯繫電話</label>
+                                    <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-custom" placeholder="請輸入電話">
+                                </div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="email" class="block text-gray-700 text-sm font-medium mb-1">電子郵箱</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-custom" placeholder="請輸入郵箱">
+                            </div>
+                            
+                            <div class="grid md:grid-cols-2 gap-4 mb-4">
+                                <div>
+                                    <label for="university" class="block text-gray-700 text-sm font-medium mb-1">所屬高校</label>
+                                    <select id="university" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-custom">
+                                        <option value="">請選擇高校</option>
+                                        <option value="hku">香港大學</option>
+                                        <option value="cuhk">香港中文大學</option>
+                                        <option value="ust">香港科技大學</option>  
+                                        <option value="polyu">香港理工大學</option> 
+                                        <option value="cityu">香港城市大學</option>
+                                        <option value="hsbu">香港浸會大學</option>
+                                        <option value="lingnanu">香港嶺南大學</option>
+                                        <option value="hkedu">香港教育大學</option>
+                                        <option value="other">其他高校</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="service" class="block text-gray-700 text-sm font-medium mb-1">申請服務類型</label>
+                                    <select id="service" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-custom">
+                                        <option value="">請選擇服務類型</option>
+                                        <option value="incubation">科創項目孵化</option>
+                                        <option value="fair">高交會參展</option>
+                                        <option value="resources">資源對接</option>
+                                        <option value="all">以上全部</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="project" class="block text-gray-700 text-sm font-medium mb-1">項目名稱</label>
+                                <input type="text" id="project" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-custom" placeholder="請輸入項目名稱">
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label for="description" class="block text-gray-700 text-sm font-medium mb-1">項目簡介</label>
+                                <textarea id="description" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-custom" placeholder="請簡述項目的核心技術、創新點與應用場景（不少於100字）"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="w-full bg-primary hover:bg-primary/90 text-white py-3 rounded-lg font-medium transition-custom">
+                                提交申請
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 聯繫我們 -->
+    <section id="contact" class="py-20 bg-light">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-primary font-medium">聯繫我們</span>
+                <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold mt-2 mb-4">歡迎隨時與我們聯繫</h2>
+                <p class="text-gray-600">無論你有任何疑問或合作意向，都可以通過以下方式與我們取得聯繫，我們將盡快回復。</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl shadow-sm p-6 text-center">
+                    <div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary mx-auto mb-4">
+                        <i class="fa fa-map-marker text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">辦公地址</h3>
+                    <p class="text-gray-600">香港中環皇后大道中181號<br>新世界大廈25樓2501室</p>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-sm p-6 text-center">
+                    <div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary mx-auto mb-4">
+                        <i class="fa fa-phone text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">聯繫電話</h3>
+                    <p class="text-gray-600">+852 - 2523 8866</p>
+                    <p class="text-gray-600 mt-1">+86 - 755 - 8284 6688（深圳辦事處）</p>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-sm p-6 text-center">
+                    <div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary mx-auto mb-4">
+                        <i class="fa fa-envelope text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">電子郵箱</h3>
+                    <p class="text-gray-600">info@nexa-hk.org</p>
+                    <p class="text-gray-600 mt-1">partnership@nexa-hk.org（合作咨詢）</p>
+                </div>
+            </div>
+            
+            <div class="mt-12 bg-white rounded-xl shadow-sm p-6 md:p-8">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-bold mb-6">發送詢問</h3>
+                        <form>
+                            <div class="mb-4">
+                                <label for="contact-name" class="block text-gray-700 text-sm font-medium mb-1">您的姓名</label>
+                                <input type="text" id="contact-name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-custom" placeholder="請輸入姓名">
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="contact-email" class="block text-gray-700 text-sm font-medium mb-1">您的郵箱</label>
+                                <input type="email" id="contact-email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-custom" placeholder="請輸入郵箱">
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="contact-subject" class="block text-gray-700 text-sm font-medium mb-1">主題</label>
+                                <input type="text" id="contact-subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-custom" placeholder="請輸入詢問主題">
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label for="contact-message" class="block text-gray-700 text-sm font-medium mb-1">您的消息</label>
+                                <textarea id="contact-message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-custom" placeholder="請輸入您的消息內容"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="inline-block bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-lg font-medium transition-custom">
+                                發送消息
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-bold mb-6">關注我們</h3>
+                        <p class="text-gray-600 mb-6">關注Nexa的社交媒體賬號，及時了解最新活動信息與科創動態。</p>
+                        
+                        <div class="flex gap-4 mb-8">
+                            <a href="#" class="w-12 h-12 rounded-full bg-[#1877F2] flex items-center justify-center text-white hover:opacity-90 transition-custom">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 rounded-full bg-[#1DA1F2] flex items-center justify-center text-white hover:opacity-90 transition-custom">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 rounded-full bg-[#E4405F] flex items-center justify-center text-white hover:opacity-90 transition-custom">
+                                <i class="fa fa-instagram"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 rounded-full bg-[#FF0000] flex items-center justify-center text-white hover:opacity-90 transition-custom">
+                                <i class="fa fa-youtube-play"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 rounded-full bg-[#0A66C2] flex items-center justify-center text-white hover:opacity-90 transition-custom">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                        </div>
+                        
+                        <div class="bg-light p-5 rounded-xl">
+                            <h4 class="font-bold mb-3">工作時間</h4>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex justify-between">
+                                    <span>周一至周五</span>
+                                    <span>9:00 - 18:00</span>
+                                </li>
+                                <li class="flex justify-between">
+                                    <span>周六</span>
+                                    <span>10:00 - 15:00（預約制）</span>
+                                </li>
+                                <li class="flex justify-between">
+                                    <span>周日及公眾假期</span>
+                                    <span>休息</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 頁腳 -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <img src="https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/code_assistant/5acd59ec25844c89a5fd1da6427beab9~tplv-a9rns2rl98-image.image?rcl=202508071506083AB723330EB487C7133C&amp;rk3s=8e244e95&amp;rrcfp=e75484ac&amp;x-expires=1755155168&amp;x-signature=zSfOQtd4O1%2FqN14m%2FZTuJGluJ50%3D" alt="Nexa组织的商标" class="w-10 h-10 rounded-lg object-contain">
+                        <span class="ml-3 text-xl font-bold">Nexa</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">連接港校科創，直通高交會舞臺，助力優秀項目實現商業價值。</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-custom">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-custom">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-custom">
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-custom">
+                            <i class="fa fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">快速鏈接</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition-custom">首頁</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition-custom">關於我們</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition-custom">業務板塊</a></li>
+                        <li><a href="#cases" class="text-gray-400 hover:text-white transition-custom">成功案例</a></li>
+                        <li><a href="#activities" class="text-gray-400 hover:text-white transition-custom">活動資訊</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition-custom">聯繫我們</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">服務與支持</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-custom">高交會參展指南</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-custom">項目孵化流程</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-custom">常見問題解答</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-custom">申請條件說明</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-custom">隱私政策</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-custom">服務條款</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">聯繫信息</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3">
+                            <i class="fa fa-map-marker text-gray-400 mt-1"></i>
+                            <span class="text-gray-400">香港中環皇后大道中181號新世界大廈25樓2501室</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa fa-phone text-gray-400 mt-1"></i>
+                            <span class="text-gray-400">+852 - 2523 8866</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa fa-envelope text-gray-400 mt-1"></i>
+                            <span class="text-gray-400">info@nexa-hk.org</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
+                <p>© 2023 Nexa. 保留所有權利。</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 博士智庫研究院详情模态框 -->
+    <div id="thinktankModal" class="fixed inset-0 bg-black/50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-xl max-w-3xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="p-6 border-b">
+                <div class="flex justify-between items-center">
+                    <h3 class="text-2xl font-bold">博士智庫研究院</h3>
+                    <button onclick="closeModal('thinktankModal')" class="text-gray-500 hover:text-gray-700">
+                        <i class="fa fa-times text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="p-6">
+                <div class="flex flex-col md:flex-row gap-6 mb-6">
+                    <div class="md:w-1/3">
+                        <img src="https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/code_assistant/ba22cda545e942d6a1f29747c35b05fd~tplv-a9rns2rl98-image.image?rcl=202508071542316B7F2D2C693D677C52CD&amp;rk3s=8e244e95&amp;rrcfp=e75484ac&amp;x-expires=1755157352&amp;x-signature=wiGw85JYSZJhtKumHEgagM8zCEA%3D" alt="博士智庫研究院標誌" class="w-full h-auto rounded-lg">
+                    </div>
+                    <div class="md:w-2/3">
+                        <p class="text-gray-600 mb-4">博士智庫研究院是亞太地區領先的學術研究與技術創新平台，匯聚了全球200多位來自頂尖高校的博士級專家學者，涵蓋人工智能、生物科技、新材料、新能源等多個前沿領域。</p>
+                        <p class="text-gray-600">研究院與香港大學、香港中文大學、香港科技大學等知名高校建立了緊密的學術合作關係，旨在促進基礎研究與應用技術的轉化，為科創項目提供權威的學術支持。</p>
+                    </div>
+                </div>
+                
+                <h4 class="text-xl font-bold mb-3">核心優勢</h4>
+                <ul class="space-y-3 mb-6">
+                    <li class="flex items-start gap-3">
+                        <i class="fa fa-check-circle text-primary mt-1"></i>
+                        <div>
+                            <span class="font-medium">頂級學術資源</span>
+                            <p class="text-gray-600 text-sm">來自全球50+知名高校的博士級專家顧問團隊，提供權威的技術指導</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fa fa-check-circle text-primary mt-1"></i>
+                        <div>
+                            <span class="font-medium">跨學科研究平台</span>
+                            <p class="text-gray-600 text-sm">打破學科壁壘，促進交叉學科創新，幫助項目開拓技術視野</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fa fa-check-circle text-primary mt-1"></i>
+                        <div>
+                            <span class="font-medium">學術成果轉化支持</span>
+                            <p class="text-gray-600 text-sm">提供專利申請、學術論文發表指導，提升項目技術含金量</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fa fa-check-circle text-primary mt-1"></i>
+                        <div>
+                            <span class="font-medium">國際學術交流機會</span>
+                            <p class="text-gray-600 text-sm">定期舉辦國際學術研討會，幫助項目團隊建立國際學術網絡</p>
+                        </div>
+                    </li>
+                </ul>
+                
+                <h4 class="text-xl font-bold mb-3">服務內容</h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                    <div class="bg-light p-4 rounded-lg">
+                        <h5 class="font-medium mb-2">技術可行性評估</h5>
+                        <p class="text-gray-600 text-sm">由相關領域專家對項目技術路線進行權威評估與改進建議</p>
+                    </div>
+                    <div class="bg-light p-4 rounded-lg">
+                        <h5 class="font-medium mb-2">學術導師配對</h5>
+                        <p class="text-gray-600 text-sm">根據項目領域匹配合適的學術導師，提供長期技術指導</p>
+                    </div>
+                    <div class="bg-light p-4 rounded-lg">
+                        <h5 class="font-medium mb-2">研發資源對接</h5>
+                        <p class="text-gray-600 text-sm">協助对接高校實驗室、科研設備等研發資源</p>
+                    </div>
+                    <div class="bg-light p-4 rounded-lg">
+                        <h5 class="font-medium mb-2">學術成果包裝</h5>
+                        <p class="text-gray-600 text-sm">指導技術成果進行學術包裝，提升項目學術影響力</p>
+                    </div>
+                </div>
+                
+                <div class="bg-primary/5 p-4 rounded-lg border-l-4 border-primary">
+                    <h4 class="font-bold mb-2">合作案例</h4>
+                    <p class="text-gray-600 text-sm">協助香港大學人工智能實驗室的"智能醫療影像識別"項目完成技術升級，該項目在第26屆高交會上獲得"優秀產品獎"，並成功與3家醫療器械企業達成技術轉讓合作。</p>
+                </div>
+            </div>
+            <div class="p-6 border-t text-center">
+                <button onclick="closeModal('thinktankModal')" class="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-lg font-medium transition-custom">
+                    關閉
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 種心基金會详情模态框 -->
+    <div id="foundationModal" class="fixed inset-0 bg-black/50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-xl max-w-3xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="p-6 border-b">
+                <div class="flex justify-between items-center">
+                    <h3 class="text-2xl font-bold">種心基金會</h3>
+                    <button onclick="closeModal('foundationModal')" class="text-gray-500 hover:text-gray-700">
+                        <i class="fa fa-times text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="p-6">
+                <div class="flex flex-col md:flex-row gap-6 mb-6">
+                    <div class="md:w-1/3">
+                        <img src="https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/code_assistant/bd364909039f4bf59ccdef7a59da8fe8~tplv-a9rns2rl98-image.image?rcl=20250807154245B3FA10BCF03131571B9C&amp;rk3s=8e244e95&amp;rrcfp=e75484ac&amp;x-expires=1755157366&amp;x-signature=uNBWNhSj%2F6YL9e95DchbaOq4gU4%3D" alt="種心基金會標誌" class="w-full h-auto rounded-lg">
+                    </div>
+                    <div class="md:w-2/3">
+                        <p class="text-gray-600 mb-4">種心基金會成立於2015年，是一家專注於早期科創項目的非營利投資機構，總部設於香港，管理資金規模超過10億港元。基金會以"培育創新種子，成就未來領袖"為使命，重點投資來自高校的原創性科技項目。</p>
+                        <p class="text-gray-600">不同於傳統投資機構，種心基金會更側重於項目的社會價值與長期發展潛力，不僅提供資金支持，更注重對創業團隊的全方位培育，幫助年輕創業者成長。</p>
+                    </div>
+                </div>
+                
+                <h4 class="text-xl font-bold mb-3">核心優勢</h4>
+                <ul class="space-y-3 mb-6">
+                    <li class="flex items-start gap-3">
+                        <i class="fa fa-check-circle text-primary mt-1"></i>
+                        <div>
+                            <span class="font-medium">靈活的投資策略</span>
+                            <p class="text-gray-600 text-sm">提供種子輪至A輪投資，金額從50萬至500萬港元不等，投資期限更靈活</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fa fa-check-circle text-primary mt-1"></i>
+                        <div>
+                            <span class="font-medium">全方位投後服務</span>
+                            <p class="text-gray-600 text-sm">除資金外，提供戰略規劃、團隊建設、資源對接等一站式投後服務</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fa fa-check-circle text-primary mt-1"></i>
+                        <div>
+                            <span class="font-medium">低壓力投資環境</span>
+                            <p class="text-gray-600 text-sm">更注重長期價值，給予創業團隊更大的發展空間與耐心</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fa fa-check-circle text-primary mt-1"></i>
+                        <div>
+                            <span class="font-medium">龐大的投資人網絡</span>
+                            <p class="text-gray-600 text-sm">連接數百位天使投資人與機構投資者，為項目後續融資鋪路</p>
+                        </div>
+                    </li>
+                </ul>
+                
+                <h4 class="text-xl font-bold mb-3">投資領域</h4>
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">人工智能與大數據</span>
+                    <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">生物醫藥與健康科技</span>
+                    <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">清潔能源與環境科技</span>
+                    <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">智能製造與先進材料</span>
+                    <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">金融科技與區塊鏈</span>
+                </div>
+                
+                <div class="bg-primary/5 p-4 rounded-lg border-l-4 border-primary">
+                    <h4 class="font-bold mb-2">投資案例</h4>
+                    <p class="text-gray-600 text-sm">2023年投資的香港中文大學"新型納米過濾材料"項目，在基金會支持下完成了產品原型開發與商業化團隊組建，並在高交會上獲得3家水處理企業的合作意向，目前已完成A輪融資。</p>
+                </div>
+            </div>
+            <div class="p-6 border-t text-center">
+                <button onclick="closeModal('foundationModal')" class="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-lg font-medium transition-custom">
+                    關閉
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 環球商業協會详情模态框 -->
+    <div id="businessModal" class="fixed inset-0 bg-black/50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-xl max-w-3xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="p-6 border-b">
+                <div class="flex justify-between items-center">
+                    <h3 class="text-2xl font-bold">環球商業協會</h3>
+                    <button onclick="closeModal('businessModal')" class="text-gray-500 hover:text-gray-700">
+                        <i class="fa fa-times text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="p-6">
+                <div class="flex flex-col md:flex-row gap-6 mb-6">
+                    <div class="md:w-1/3">
+                        <img src="https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/code_assistant/17680ed8d1cb41feb693fa30fdba4ae4~tplv-a9rns2rl98-image.image?rcl=20250807154300F1A9C4F165F34505B592&amp;rk3s=8e244e95&amp;rrcfp=e75484ac&amp;x-expires=1755157381&amp;x-signature=ulY3uIDS1RJ5kxpk%2B9SL9wcu7eY%3D" alt="環球商業協會標誌" class="w-full h-auto rounded-lg">
+                    </div>
+                    <div class="md:w-2/3">
+                        <p class="text-gray-600 mb-4">環球商業協會是一個連接全球企業與創新項目的國際性商業組織，成立於2008年，總部位於香港，在全球20多個國家和地區設有分支機構，會員包括500多家跨國企業、上市公司和行業領軍企業。</p>
+                        <p class="text-gray-600">協會致力於促進企業與創新項目之間的技術合作與商業對接，每年舉辦超過50場各行業的商務交流活動，幫助數百個創新項目與企業建立合作關係。</p>
+                    </div>
+                </div>
+                
+                <h4 class="text-xl font-bold mb-3">核心優勢</h4>
+                <ul class="space-y-3 mb-6">
+                    <li class="flex items-start gap-3">
+                        <i class="fa fa-check-circle text-primary mt-1"></i>
+                        <div>
+                            <span class="font-medium">龐大的企業網絡</span>
+                            <p class="text-gray-600 text-sm">覆蓋500+行業領軍企業，包括眾多世界500強及行業龍頭企業</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fa fa-check-circle text-primary mt-1"></i>
+                        <div>
+                            <span class="font-medium">精準對接服務</span>
+                            <p class="text-gray-600 text-sm">基於項目特點與企業需求，提供精準的商業合作對接服務</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fa fa-check-circle text-primary mt-1"></i>
+                        <div>
+                            <span class="font-medium">全球市場渠道</span>
+                            <p class="text-gray-600 text-sm">幫助項目拓展海內外市場，特別是東南亞、歐美等主要市場</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fa fa-check-circle text-primary mt-1"></i>
+                        <div>
+                            <span class="font-medium">行業資源整合</span>
+                            <p class="text-gray-600 text-sm">整合產業鏈上下游資源，助力項目快速落地與商業化</p>
+                        </div>
+                    </li>
+                </ul>
+                
+                <h4 class="text-xl font-bold mb-3">服務內容</h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                    <div class="bg-light p-4 rounded-lg">
+                        <h5 class="font-medium mb-2">企業需求匹配</h5>
+                        <p class="text-gray-600 text-sm">根據項目技術特點，匹配有相關需求的企業客戶</p>
+                    </div>
+                    <div class="bg-light p-4 rounded-lg">
+                        <h5 class="font-medium mb-2">商務洽談安排</h5>
+                        <p class="text-gray-600 text-sm">組織面對面會議、產品演示等商務活動，促進合作達成</p>
+                    </div>
+                    <div class="bg-light p-4 rounded-lg">
+                        <h5 class="font-medium mb-2">市場准入指導</h5>
+                        <p class="text-gray-600 text-sm">提供目標市場分析與准入策略建議，降低市場拓展風險</p>
+                    </div>
+                    <div class="bg-light p-4 rounded-lg">
+                        <h5 class="font-medium mb-2">行業峰會參與</h5>
+                        <p class="text-gray-600 text-sm">邀請優秀項目參加行業領軍峰會，提升項目曝光度與影響力</p>
+                    </div>
+                </div>
+                
+                <div class="bg-primary/5 p-4 rounded-lg border-l-4 border-primary">
+                    <h4 class="font-bold mb-2">合作案例</h4>
+                    <p class="text-gray-600 text-sm">幫助香港科技大學"智能物流機器人"項目與協會會員企業達成戰略合作，項目團隊的技術解決方案已應用於該企業的5個海外倉庫，並獲得首筆500萬港元訂單。</p>
+                </div>
+            </div>
+            <div class="p-6 border-t text-center">
+                <button onclick="closeModal('businessModal')" class="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-lg font-medium transition-custom">
+                    關閉
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // 手機端菜單切換
+        document.getElementById('menuBtn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // 導航欄滾動效果
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-md');
+                navbar.classList.remove('shadow-sm');
+            } else {
+                navbar.classList.remove('shadow-md');
+                navbar.classList.add('shadow-sm');
+            }
+        });
+        
+        // 平滑滾動
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // 關閉手機菜單
+                    document.getElementById('mobileMenu').classList.add('hidden');
+                }
+            });
+        });
+        
+        // 模态框控制
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // 防止背景滾動
+        }
+        
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+            document.body.style.overflow = ''; // 恢復背景滾動
+        }
+        
+        // 點擊模态框背景關閉
+        document.querySelectorAll('[id$="Modal"]').forEach(modal => {
+            modal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.classList.add('hidden');
+                    document.body.style.overflow = '';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
